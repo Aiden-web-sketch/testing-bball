@@ -1,3 +1,4 @@
+
 class trash {
     constructor(x, y, width, height) {
       var options = {
@@ -6,7 +7,7 @@ class trash {
           'friction':0.3,
           'density':1.0
       }
-      this.body = Bodies.rectangle(x, y, 100, 50, options);
+      this.body = Bodies.rectangle(x, y,width, height, options);
       this.width = width;
       this.height = height;
       
@@ -14,10 +15,12 @@ class trash {
     }
     display(){
       var pos =this.body.position;
+      push();
       translate(pos.x, pos.y);
       rectMode(CENTER);
       fill(100,100,150);
-      stroke("black")
+     noStroke();
       rect(0, 0, this.width, this.height);
+      pop()
     }
   };
